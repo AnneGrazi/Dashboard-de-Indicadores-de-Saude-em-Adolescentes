@@ -195,3 +195,309 @@
                 <div id="mapaPlaceholder" class="flex flex-col items-center justify-center z-0">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mb-2 text-gray-400" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                    </svg>
+                    <p class="font-semibold text-center px-4" id="mapaPlaceholderTexto">Mapa não disponível</p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+    <footer class="bg-white border-t border-gray-200 py-6 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h3 class="text-sm font-bold text-gray-700 uppercase mb-3">Autoria do Dashboard</h3>
+            
+            <p class="text-sm text-gray-600 mb-4 leading-relaxed">
+                Ellen Gabriela Alves Soares¹<br>
+                Thalita Rebeca Barros de Souza¹<br>
+                Eylla Cristina Vieira Freitas¹&comma;²<br>
+                Anne Grazielle Gomes¹<br>
+                Daniel da Rocha Queiroz¹
+            </p>
+            
+            <p class="text-xs text-gray-500 mb-4">
+                ¹Universidade Federal de Pernambuco (UFPE)<br>
+                ²Universidade de São Paulo (USP)
+            </p>
+            
+            <p class="text-xs text-gray-500 italic max-w-3xl mx-auto">
+                O dashboard está vinculado ao Programa Institucional de Bolsas de Iniciação em Desenvolvimento Tecnológico e Inovação, ao Programa de Pós-Graduação em Educação Física e foi desenvolvido pelos integrantes do Grupo de Pesquisa em Atividade Física e Desenvolvimento Humano.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const escolasData = [
+            { "nome": "ESCOLA LIONS DE PARNAMIRIM", "alunos": 59, "quadra": "Sim", "atividade": "22%", "tela": "22%", "sono": "32,20%", "duasOuMais": "18,60%", "espacoPublico": 2, "espacoPrivado": 0, "pracas": 0, "academias": 0, "mapa": "./img/1 ESCOLA LIONS .jpg -8 (1).jpg.jpeg" },
+            { "nome": "ESCOLA DE REFERENCIA EM ENSINO MEDIO ROSA DE MAGALHAES MELO", "alunos": 68, "quadra": "Sim", "atividade": "26,40%", "tela": "13,20%", "sono": "22%", "duasOuMais": "13,20%", "espacoPublico": 6, "espacoPrivado": 2, "pracas": 1, "academias": 1, "mapa": "./img/2 E 3 NERCIO E ROSA MAGALHAES.jpg.jpeg" },
+            { "nome": "ESCOLA DE REFERENCIA EM ENSINO MEDIO PADRE NERCIO", "alunos": 44, "quadra": "Sim", "atividade": "18,10%", "tela": "29,50%", "sono": "18,10%", "duasOuMais": "13,60%", "espacoPublico": 4, "espacoPrivado": 4, "pracas": 0, "academias": 0, "mapa": "./img/2 E 3 NERCIO E ROSA MAGALHAES.jpg.jpeg" },
+            { "nome": "ESCOLA DE REFERÊNCIA EM ENSINO MÉDIO JARBAS PERNAMBUCANO", "alunos": 18, "quadra": "Sim", "atividade": "11,10%", "tela": "22,20%", "sono": "5,50%", "duasOuMais": "5,50%", "espacoPublico": 6, "espacoPrivado": 2, "pracas": 5, "academias": 1, "mapa": "./img/4 jarbaspe.jpg.jpeg" },
+            { "nome": "ESCOLA DE REFERENCIA EM ENSINO MEDIO MARIA RITA DA SILVA LESSA", "alunos": 61, "quadra": "Sim", "atividade": "31,10%", "tela": "27,80%", "sono": "31,10%", "duasOuMais": "19,60%", "espacoPublico": 5, "espacoPrivado": 6, "pracas": 2, "academias": 1, "mapa": "./img/8 ritalessa.jpg.jpeg" },
+            { "nome": "ESCOLA DE REFERÊNCIA EM ENSINO MÉDIO DIARIO DE PERNAMBUCO", "alunos": 40, "quadra": "Não", "atividade": "47,50%", "tela": "40%", "sono": "17,50%", "duasOuMais": "27,50%", "espacoPublico": 5, "espacoPrivado": 5, "pracas": 3, "academias": 1, "mapa": "./img/6 diariope.jpg.jpeg" },
+            { "nome": "EREFEM BARROS CARVALHO", "alunos": 40, "quadra": "Não", "atividade": "30%", "tela": "20%", "sono": "40%", "duasOuMais": "20%", "espacoPublico": 1, "espacoPrivado": 5, "pracas": 1, "academias": 0, "mapa": "./img/7 barroscarvalho.jpg -8.jpg.jpeg" },
+            { "nome": "EREFEM SENADOR NOVAES FILHO", "alunos": 38, "quadra": "Não", "atividade": "28,90%", "tela": "31,50%", "sono": "39,40%", "duasOuMais": "26,30%", "espacoPublico": 4, "espacoPrivado": 0, "pracas": 3, "academias": 1, "mapa": "./img/5 senador.jpg -8.jpg.jpeg" },
+            { "nome": "ESCOLA DE REFERÊNCIA EM ENSINO MÉDIO JOSE MANUEL DE QUEIROZ", "alunos": 92, "quadra": "Sim", "atividade": "45,60%", "tela": "25%", "sono": "28,20%", "duasOuMais": "26%", "espacoPublico": 3, "espacoPrivado": 4, "pracas": 2, "academias": 0, "mapa": "./img/11 ESCOLA DE REFERÊNCIA EM ENSINO MÉDIO JOSE MANUEL DE QUEIROZ (2).png" },
+            { "nome": "ESCOLA PROFESSORA ZULMIRA DE PAULA ALMEIDA", "alunos": 16, "quadra": "Sim", "atividade": "43,70%", "tela": "18,70%", "sono": "43,70%", "duasOuMais": "43,70%", "espacoPublico": 5, "espacoPrivado": 5, "pracas": 1, "academias": 0, "mapa": "./img/13 - ESCOLA PROFESSORA ZULMIRA DE PAULA ALMEIDA.png" },
+            { "nome": "ESCOLA JOÃO PAULO I", "alunos": 22, "quadra": "Sim", "atividade": "36,3%", "tela": "22,7%", "sono": "22,70%", "duasOuMais": "18,1%", "espacoPublico": 4, "espacoPrivado": 4, "pracas": 0, "academias": 0, "mapa": "./img/16 ESCOLA JOÃO PAULO I.png" },
+            { "nome": "ESCOLA DE REFERENCIA EM ENSINO MEDIO MAESTRO NELSON FERREIRA", "alunos": 24, "quadra": "Sim", "atividade": "33,30%", "tela": "29,10%", "sono": "8,33%", "duasOuMais": "12,50%", "espacoPublico": 3, "espacoPrivado": 1, "pracas": 0, "academias": 0, "mapa": "./img/12 ESCOLA DE REFERENCIA EM ENSINO MEDIO MAESTRO NELSON FERREIRA (3).png" },
+            { "nome": "ESCOLA DE REFERENCIA EM ENSINO FUNDAMENTAL E MÉDIO NOVA CRUZ", "alunos": 26, "quadra": "Não", "atividade": "38,40%", "tela": "19,20%", "sono": "19,20%", "duasOuMais": "2,90%", "espacoPublico": 0, "espacoPrivado": 0, "pracas": 0, "academias": 0, "mapa": "./img/09- ESCOLA DE REFERENCIA EM ENSINO FUNDAMENTAL E MÉDIO NOVA CRUZ.png -8.png" },
+            { "nome": "ESCOLA PEDRO BARROS FILHO", "alunos": 10, "quadra": "Sim", "atividade": "30%", "tela": "20%", "sono": "30%", "duasOuMais": "30%", "espacoPublico": 3, "espacoPrivado": 8, "pracas": 1, "academias": 0, "mapa": "./img/20 ESCOLA PEDRO BARROS FILHO.png" },
+            { "nome": "ESCOLA DE REFERENCIA EM ENSINO MEDIO DESEMBARGADOR ANTÔNIO DA SILVA GUIMARÃES", "alunos": 25, "quadra": "Não", "atividade": "36%", "tela": "40%", "sono": "24%", "duasOuMais": "24%", "espacoPublico": 7, "espacoPrivado": 3, "pracas": 4, "academias": 0, "mapa": "./img/14 ESCOLA DE REFERENCIA EM ENSINO MEDIO DESEMBARGADOR ANTÔNIO DA SILVA GUIMARÃES.png" },
+            { "nome": "ESCOLA DE REFERENCIA EM ENSINO MÉDIO PADRE FRANCISCO CARNEIRO", "alunos": 34, "quadra": "Sim", "atividade": "38,20%", "tela": "17,60%", "sono": "41,10%", "duasOuMais": "20,50%", "espacoPublico": 4, "espacoPrivado": 7, "pracas": 3, "academias": 1, "mapa": "./img/10 - ESCOLA DE REFERENCIA EM ENSINO MÉDIO PADRE FRANCISCO CARNEIRO.png" },
+            { "nome": "ESCOLA DE REFERÊNCIA EM ENSINO MÉDIO SOFRONIO PORTELA", "alunos": 32, "quadra": "Sim", "atividade": "31,20%", "tela": "12,50%", "sono": "31,20%", "duasOuMais": "12,50%", "espacoPublico": 2, "espacoPrivado": 2, "pracas": 0, "academias": 0, "mapa": "./img/17 ESCOLA DE REFERÊNCIA EM ENSINO MÉDIO SOFRONIO PORTELA.png -8.png" },
+            { "nome": "ESCOLA DE REFERENCIA EM ENSINO MEDIO FREI OTTO", "alunos": 36, "quadra": "Sim", "atividade": "27,70%", "tela": "27,70%", "sono": "19,40%", "duasOuMais": "25%", "espacoPublico": 5, "espacoPrivado": 7, "pracas": 4, "academias": 0, "mapa": "./img/15 - Frei Otto.png" },
+            { "nome": "ESCOLA NELSON CHAVES", "alunos": 46, "quadra": "Sim", "atividade": "26%", "tela": "30,40%", "sono": "34,70%", "duasOuMais": "23,90%", "espacoPublico": 2, "espacoPrivado": 3, "pracas": 0, "academias": 1, "mapa": "./img/21 ESCOLA PROFESSOR NELSON CHAVES.jpeg" },
+            { "nome": "ESCOLA STELA MARIA SANTOS PINTO BARROS", "alunos": 31, "quadra": "Não", "atividade": "16,10%", "tela": "32,20%", "sono": "29%", "duasOuMais": "19,30%", "espacoPublico": 2, "espacoPrivado": 3, "pracas": 1, "academias": 0, "mapa": "./img/19 ESCOLA STELA MARIA SANTOS PINTO BARROS.png -8 - Copia.png" }
+        ];
+
+        let selectedIndex = null; // null indica nenhuma escola selecionada
+        let chartQuadra, chartEspacos, chartEquipamentos;
+
+        const colors = {
+            red: '#A31A1A',
+            darkRed: '#7A1313',
+            gray: '#9CA3AF',
+            lightGray: '#E5E7EB'
+        };
+
+        document.addEventListener("DOMContentLoaded", () => {
+            Chart.defaults.font.family = "'Inter', sans-serif";
+            renderTable();
+            initCharts();
+            updateDashboard(null); // Inicia mostrando o resultado geral
+        });
+
+        // Função auxiliar para converter string "%" em valor numérico
+        function parsePct(str) {
+            if (!str) return 0;
+            return parseFloat(str.replace(',', '.').replace('%', '')) || 0;
+        }
+
+        // Renderiza as linhas da tabela dinamicamente
+        function renderTable() {
+            const tbody = document.getElementById('tabelaEscolas');
+            tbody.innerHTML = '';
+
+            escolasData.forEach((escola, index) => {
+                const tr = document.createElement('tr');
+                const baseClasses = index % 2 === 0 ? 'bg-white' : 'bg-red-50';
+
+                tr.className = `${baseClasses} border-b border-gray-200 cursor-pointer transition-colors duration-200 hover:bg-red-100 group`;
+                tr.id = `row-${index}`;
+                tr.onclick = () => selectRow(index);
+
+                tr.innerHTML = `
+                    <td class="py-3 px-4 group-hover:text-red-pdf transition-colors">${escola.nome}</td>
+                    <td class="py-3 px-4 text-center font-medium">${escola.alunos}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function deselectCurrentRow() {
+            if (selectedIndex !== null) {
+                const oldRow = document.getElementById(`row-${selectedIndex}`);
+                if (oldRow) {
+                    oldRow.classList.remove('bg-red-200', 'font-bold', 'border-l-4', 'border-red-pdf');
+                    if (selectedIndex % 2 === 0) {
+                        oldRow.classList.add('bg-white');
+                    } else {
+                        oldRow.classList.add('bg-red-50');
+                    }
+                }
+            }
+        }
+
+        // Lida com o clique na linha (permite selecionar e desmarcar)
+        function selectRow(index) {
+            // Se clicar na mesma escola que já está selecionada, desmarca e volta ao geral
+            if (selectedIndex === index) {
+                deselectCurrentRow();
+                selectedIndex = null;
+                updateDashboard(null);
+                return;
+            }
+
+            deselectCurrentRow();
+            selectedIndex = index;
+            updateDashboard(index);
+        }
+
+        function initCharts() {
+            // 1. Gráfico de Quadra (Rosca)
+            const ctxQuadra = document.getElementById('quadraChart').getContext('2d');
+            chartQuadra = new Chart(ctxQuadra, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Sim', 'Não'],
+                    datasets: [{
+                        data: [0, 0],
+                        backgroundColor: [colors.red, colors.darkRed],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '75%',
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { enabled: true }
+                    }
+                }
+            });
+
+            // 2. Gráfico Espaços (Barras)
+            const ctxEspacos = document.getElementById('barChartEspacos').getContext('2d');
+            chartEspacos = new Chart(ctxEspacos, {
+                type: 'bar',
+                data: {
+                    labels: ['Espaço público', 'Espaço privado'],
+                    datasets: [{
+                        label: 'Quantidade',
+                        data: [0, 0],
+                        backgroundColor: [colors.gray, colors.red],
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { stepSize: 1 } }
+                    },
+                    plugins: {
+                        legend: { display: false }
+                    }
+                }
+            });
+
+            // 3. Gráfico Academias/Praças (Barras)
+            const ctxEquipamentos = document.getElementById('barChartEquipamentos').getContext('2d');
+            chartEquipamentos = new Chart(ctxEquipamentos, {
+                type: 'bar',
+                data: {
+                    labels: ['Academias', 'Praças/parques'],
+                    datasets: [{
+                        label: 'Quantidade',
+                        data: [0, 0],
+                        backgroundColor: [colors.gray, colors.red],
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { stepSize: 1 } }
+                    },
+                    plugins: {
+                        legend: { display: false }
+                    }
+                }
+            });
+        }
+
+        function updateDashboard(index) {
+            if (index === null) {
+                // --- MODO: NENHUMA ESCOLA SELECIONADA (RESULTADO GERAL) ---
+
+                // 1. Gráfico de Quadras (Total de todas as escolas)
+                const totalSim = escolasData.filter(e => e.quadra === "Sim").length;
+                const totalNao = escolasData.filter(e => e.quadra === "Não").length;
+                const pctSim = Math.round((totalSim / escolasData.length) * 100);
+
+                chartQuadra.data.datasets[0].data = [totalSim, totalNao];
+                document.getElementById('quadraTextOverlay').textContent = `${pctSim}%`;
+                chartQuadra.update();
+
+                // 2. Cartões (Média Ponderada pelo número de alunos)
+                const totalAlunos = escolasData.reduce((acc, e) => acc + e.alunos, 0);
+                const avgAtividade = escolasData.reduce((acc, e) => acc + (parsePct(e.atividade) * e.alunos), 0) / totalAlunos;
+                const avgTela = escolasData.reduce((acc, e) => acc + (parsePct(e.tela) * e.alunos), 0) / totalAlunos;
+                const avgSono = escolasData.reduce((acc, e) => acc + (parsePct(e.sono) * e.alunos), 0) / totalAlunos;
+                const avgDuasMais = escolasData.reduce((acc, e) => acc + (parsePct(e.duasOuMais) * e.alunos), 0) / totalAlunos;
+
+                document.getElementById('cardAtividadeVal').textContent = `${avgAtividade.toFixed(1).replace('.', ',')}%`;
+                document.getElementById('cardTelaVal').textContent = `${avgTela.toFixed(1).replace('.', ',')}%`;
+                document.getElementById('cardSonoVal').textContent = `${avgSono.toFixed(1).replace('.', ',')}%`;
+                document.getElementById('cardDuasMaisVal').textContent = `${avgDuasMais.toFixed(1).replace('.', ',')}%`;
+
+                // 3. Gráfico de Espaços (Soma Geral)
+                const totalPublico = escolasData.reduce((acc, e) => acc + e.espacoPublico, 0);
+                const totalPrivado = escolasData.reduce((acc, e) => acc + e.espacoPrivado, 0);
+                chartEspacos.data.datasets[0].data = [totalPublico, totalPrivado];
+                chartEspacos.update();
+
+                // 4. Gráfico de Equipamentos (Soma Geral)
+                const totalAcademias = escolasData.reduce((acc, e) => acc + e.academias, 0);
+                const totalPracas = escolasData.reduce((acc, e) => acc + e.pracas, 0);
+                chartEquipamentos.data.datasets[0].data = [totalAcademias, totalPracas];
+                chartEquipamentos.update();
+
+                // 5. Seção de Mapa
+                document.getElementById('mapaTitulo').textContent = "Mapa da Escola";
+                const imgElement = document.getElementById('mapaImagem');
+                const placeholderElement = document.getElementById('mapaPlaceholder');
+                imgElement.classList.add('hidden');
+                placeholderElement.classList.remove('hidden');
+                document.getElementById('mapaPlaceholderTexto').textContent = "Selecione uma escola para visualizar seu mapa";
+
+            } else {
+                // --- MODO: ESCOLA ESPECÍFICA SELECIONADA ---
+                const escola = escolasData[index];
+
+                // Destaca a linha selecionada
+                const newRow = document.getElementById(`row-${index}`);
+                if (newRow) {
+                    newRow.classList.remove('bg-white', 'bg-red-50');
+                    newRow.classList.add('bg-red-200', 'font-bold', 'border-l-4', 'border-red-pdf');
+                }
+
+                // Cartões de indicadores da escola
+                document.getElementById('cardAtividadeVal').textContent = escola.atividade;
+                document.getElementById('cardTelaVal').textContent = escola.tela;
+                document.getElementById('cardSonoVal').textContent = escola.sono;
+                document.getElementById('cardDuasMaisVal').textContent = escola.duasOuMais;
+
+                // Gráfico Quadra
+                if (escola.quadra === "Sim") {
+                    chartQuadra.data.datasets[0].data = [1, 0];
+                    document.getElementById('quadraTextOverlay').textContent = "SIM";
+                } else {
+                    chartQuadra.data.datasets[0].data = [0, 1];
+                    document.getElementById('quadraTextOverlay').textContent = "NÃO";
+                }
+                chartQuadra.update();
+
+                // Gráfico Espaços
+                chartEspacos.data.datasets[0].data = [escola.espacoPublico, escola.espacoPrivado];
+                chartEspacos.update();
+
+                // Gráfico Equipamentos
+                chartEquipamentos.data.datasets[0].data = [escola.academias, escola.pracas];
+                chartEquipamentos.update();
+
+                // Mapa da escola
+                document.getElementById('mapaTitulo').textContent = `Mapa - ${escola.nome}`;
+                const imgElement = document.getElementById('mapaImagem');
+                const placeholderElement = document.getElementById('mapaPlaceholder');
+
+                if (escola.mapa) {
+                    imgElement.src = escola.mapa;
+                    imgElement.classList.remove('hidden');
+                    placeholderElement.classList.add('hidden');
+                } else {
+                    imgElement.classList.add('hidden');
+                    placeholderElement.classList.remove('hidden');
+                    document.getElementById('mapaPlaceholderTexto').textContent = "Mapa ainda não adicionado";
+                }
+            }
+        }
+        
+    </script>
+</body>
+
+</html>
